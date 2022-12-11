@@ -37,8 +37,17 @@ class Human:
 
     def work(self):
         if self.car.drive():
-            
-
+            pass
+        else:
+            if self.car.fuel < 10:
+                self.shopping('fuel')
+                return
+            else:
+                self.to_repair()
+                return
+        self.money += self.job.salary
+        self.gladness += self.job.gladness_less
+        self.satiety -= 4
 
     def shopping(self):
         pass
