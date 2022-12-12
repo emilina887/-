@@ -32,15 +32,28 @@ class Human:
             if self.satiety > 100:
                 self.satiety = 100
                 return
+            self.satiety += 5
+            self.home.food -= 5
 
     def work(self):
-        pass
+        if self.car.drive():
+            pass
+        else:
+            if self.car.fuel < 10:
+                self.shopping('fuel')
+                return
+            else:
+                self.to_repair()
+                return
+        self.money += self.job.salary
+        self.gladness += self.job.gladness_less
+        self.satiety -= 4
 
     def shopping(self):
         pass
 
     def chill(self):
-        pass
+        if self.chill()
 
     def clear_home(self):
         pass
